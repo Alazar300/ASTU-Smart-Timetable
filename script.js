@@ -37,26 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!todayTitle || !todayClasses) return;
 
-  todayTitle.textContent = Today's Schedule — ${today};
+  todayTitle.textContent = `Today's Schedule — ${today}`;
 
   if (weeklySchedule[today]) {
-
     todayClasses.innerHTML = weeklySchedule[today]
-      .map(([time, name, code]) => 
+      .map(([time, name, code]) => `
         <div class="class-item">
           <strong>${name}</strong>
           <small>${time} · ${code}</small>
         </div>
-      ).join("");
-
+      `)
+      .join("");
   } else {
-
-    todayClasses.innerHTML = 
+    todayClasses.innerHTML = `
       <div class="class-item">
         <strong>No scheduled classes today.</strong>
         <small>Enjoy your day!</small>
       </div>
-    ;
+    `;
   }
 
 });
