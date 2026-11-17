@@ -13,7 +13,7 @@ if (logo) {
         const rotateX = (0.5 - y) * 35;
 
         img.style.transform =
-            rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.08);
+            `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.08)`;
     });
 
     logo.addEventListener("pointerleave", () => {
