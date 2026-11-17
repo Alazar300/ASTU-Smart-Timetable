@@ -225,3 +225,255 @@ footer span {
     margin: -15px 15px 25px;
   }
 }
+header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#astu-3d-logo {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+}
+
+#astu-3d-logo canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+header nav {
+    margin-left: auto;
+}
+.hero-logo-3d {
+    width: 170px;
+    height: 170px;
+    margin: 25px auto;
+    perspective: 1000px;
+    cursor: pointer;
+    touch-action: pan-y;
+}
+
+.hero-logo-3d img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.35s ease;
+    filter: drop-shadow(0 15px 18px rgba(0,0,0,0.4));
+}
+
+.hero-logo-3d:hover img {
+    filter:
+        drop-shadow(0 18px 25px rgba(214,174,89,0.5));
+}
+
+@keyframes logoSpin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.hero-logo-3d.spin img {
+    animation: logoSpin 1.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .hero-logo-3d {
+        width: 125px;
+        height: 125px;
+    }
+}
+/* NEXT CLASS COUNTDOWN */
+
+.countdown-section {
+    padding: 35px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.countdown-card {
+    width: 100%;
+    max-width: 750px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #142B4F,
+        #203F70
+    );
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    border: 1px solid #D6AE59;
+}
+
+.countdown-label {
+    color: #D6AE59;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+#next-class-name {
+    font-size: 28px;
+    margin: 15px 0 8px;
+}
+
+#next-class-details {
+    color: #E0E6EF;
+    margin-bottom: 25px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-box {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(214,174,89,0.5);
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 90px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #D6AE59;
+}
+
+.time-box small {
+    font-size: 12px;
+    color: white;
+}
+
+#countdown-status {
+    margin-top: 22px;
+    color: #D6AE59;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .countdown-card {
+        padding: 22px 12px;
+    }
+
+    .time-box {
+        min-width: 70px;
+        padding: 12px 8px;
+    }
+
+    .time-box span {
+        font-size: 25px;
+    }
+}
+/* DARK / LIGHT MODE BUTTON */
+#theme-toggle {
+    background: #D6AE59;
+    color: #142B4F;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* LIGHT MODE */
+/* =========================
+   COMPLETE LIGHT MODE
+========================= */
+
+body.light-mode {
+    background: #F4F6FA !important;
+    color: #142B4F !important;
+}
+
+/* Header */
+body.light-mode header {
+    background: #FFFFFF !important;
+    color: #142B4F !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Hero section */
+body.light-mode .hero {
+    background: linear-gradient(135deg, #FFFFFF, #E5ECF6) !important;
+    color: #142B4F !important;
+}
+
+body.light-mode .hero h1,
+body.light-mode .hero p,
+body.light-mode .hero .section-label {
+    color: #142B4F !important;
+}
+
+body.light-mode .hero h1 span {
+    color: #B18432 !important;
+}
+
+/* Student information */
+body.light-mode .student-card {
+    background: #FFFFFF !important;
+    color: #142B4F !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+/* Countdown */
+body.light-mode .countdown-card {
+    background: linear-gradient(135deg, #FFFFFF, #E5ECF6) !important;
+    color: #142B4F !important;
+}
+
+body.light-mode .countdown-card h2,
+body.light-mode .countdown-card p {
+    color: #142B4F !important;
+}
+
+/* Timetable and classes */
+body.light-mode .class-item,
+body.light-mode .course-card {
+    background: #FFFFFF !important;
+    color: #142B4F !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+/* Other content sections */
+body.light-mode section:not(.hero) {
+    color: #142B4F;
+}
+
+/* Navigation and links */
+body.light-mode nav a {
+    color: #142B4F !important;
+}
+
+/* Footer */
+body.light-mode footer {
+    background: #E5EAF2 !important;
+    color: #142B4F !important;
+}
+
+/* Theme button */
+body.light-mode #theme-toggle {
+    background: #142B4F !important;
+    color: #FFFFFF !important;
+}
